@@ -1,9 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
-def hello_world(request):
-    name = request.GET.get('name')
-    if name is None:
-        name = 'you'
-    return HttpResponse('Hello ' + name + '!')
+from movies.models import Movie
+
+
+def home(request):
+    movies = Movie.objects.all().order_by('-release_date')[:5]
+    ctx = { 'latest_movies': movies }
+
+    return render(request, 'home.html', ctx)
