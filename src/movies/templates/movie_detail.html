@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ movie.name }}</title>
+    <style>
+        * {
+            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        }
+        img {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ movie.name }}</h1>
+    <img src="{{ movie.image }}" />
+    <p>{{ movie.summary }}</p>
+    <ul>
+        <li>
+            <strong>Director:</strong> {{ movie.director_name }}
+        </li>
+        <li>
+            <strong>Rating:</strong> {{ movie.rating }}</strong>
+        </li>
+        <li>
+            <strong>Category:</strong> {{ movie.category }}</strong>
+        </li>
+        <li>
+            <strong>Release Date:</strong> {{ movie.release_date }}</strong>
+        </li>
+    </ul>
+</body>
+</html>

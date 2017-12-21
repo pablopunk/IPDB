@@ -18,7 +18,9 @@
 
     {% for movie in latest_movies %}
         <!-- <h2>{{ movie.name }}</h2> -->
-        <img class="movie-image" src="{{ movie.image }}" />
+        <a href="{% url 'movie_detail' movie.pk %}" title="{{ movie.title }}">
+            <img class="movie-image" src="{{ movie.image }}" />
+        </a>
     {% endfor %}
 
 </body>
